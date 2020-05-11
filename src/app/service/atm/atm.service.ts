@@ -15,10 +15,9 @@ export class AtmService {
   }
 
   public findAll(): Observable<Atm[]> {
-    let username = 'admin';
-    let password = '123';
-    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
-    return this.http.get<Atm[]>(this.usersUrl + '/get-atms', {headers});
+    let psw = 'Basic ' + btoa(sessionStorage.getItem('username') + ':' + sessionStorage.getItem('password'));
+    const myHeader = new HttpHeaders().set('Authorization', psw);
+    return this.http.get<Atm[]>(this.usersUrl + '/get-atms', {headers: myHeader});
   }
 
   public save(atm: Atm) {
