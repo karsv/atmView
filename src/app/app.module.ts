@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AtmFormComponent } from './atm-form/atm-form.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LogoutComponent } from './logout/logout.component';
     AtmListComponent,
     AtmFormComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    WithdrawComponent
   ],
   imports: [
     BrowserModule,

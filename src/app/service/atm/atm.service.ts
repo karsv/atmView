@@ -37,7 +37,15 @@ export class AtmService {
 
   // TODO: Implement
   public withdrawMoney(withdrawMoneyRequest: WithdrawMoneyRequest) {
-
+    let psw = 'Basic ' + btoa(sessionStorage.getItem('username') + ':' + sessionStorage.getItem('password'));
+    const myHeader = new HttpHeaders().set('Authorization', psw);
+    return this.http.post(this.usersUrl + '/withdraw-money', withdrawMoneyRequest, {headers: myHeader}).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err.message);
+      });
   }
 
   // TODO: Implement
