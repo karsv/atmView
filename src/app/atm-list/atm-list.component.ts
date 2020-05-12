@@ -15,7 +15,7 @@ export class AtmListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.atmService.findAll().subscribe(atm => {
+    this.atmService.getAtms().subscribe(atm => {
       this.atms = atm;
     });
   }

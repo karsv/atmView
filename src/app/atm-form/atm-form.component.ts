@@ -19,7 +19,7 @@ export class AtmFormComponent {
   }
 
   onSubmit() {
-    this.atmService.save(this.atm);
+    this.atmService.putCashToAtm(this.atm);
     this.gotoAtmsList();
   }
 

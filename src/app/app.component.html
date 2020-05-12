@@ -5,10 +5,12 @@
         <div class="card-body">
           <ul class="text-center list-inline py-3">
             <li class="list-inline-item">
-              <a *ngIf="auth.isUserLoggedIn()" routerLink="/atms" class="btn btn-info">List Atms</a>
+              <a *ngIf="auth.isUserLoggedIn() && auth.userRole()=='ADMIN'" routerLink="/atms" class="btn btn-info">List
+                Atms</a>
             </li>
             <li class="list-inline-item">
-              <a *ngIf="auth.isUserLoggedIn()" routerLink="/put-cash-to-atm" class="btn btn-info">Put cash</a>
+              <a *ngIf="auth.isUserLoggedIn() && auth.userRole()=='ADMIN'" routerLink="/put-cash-to-atm"
+                 class="btn btn-info">Put cash</a>
             </li>
             <li class="list-inline-item">
               <a *ngIf="!auth.isUserLoggedIn()" routerLink="/login" class="btn btn-info">Login</a>
