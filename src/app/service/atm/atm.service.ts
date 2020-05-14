@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Atm} from '../../model/atm';
+import {Atm} from '../../model/atm/atm';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {WithdrawMoneyRequest} from '../../model/withdraw-money-request';
-import {DepositMoneyRequest} from '../../model/deposit-money-request';
-import {TransferMoneyRequest} from '../../model/transfer-money-request';
+import {WithdrawMoneyRequest} from '../../model/wihtdrawMoneyRequest/withdraw-money-request';
+import {DepositMoneyRequest} from '../../model/depositMoneyRequest/deposit-money-request';
+import {TransferMoneyRequest} from '../../model/transferMoneyRequest/transfer-money-request';
 
 @Injectable({
   providedIn: 'root'
@@ -18,15 +18,11 @@ export class AtmService {
   }
 
   public getAtms(): Observable<Atm[]> {
-    let psw = 'Basic ' + btoa(sessionStorage.getItem('username') + ':' + sessionStorage.getItem('password'));
-    const myHeader = new HttpHeaders().set('Authorization', psw);
-    return this.http.get<Atm[]>(this.usersUrl + '/get-atms', {headers: myHeader});
+    return this.http.get<Atm[]>(this.usersUrl + '/');
   }
 
   public putCashToAtm(atm: Atm) {
-    let psw = 'Basic ' + btoa(sessionStorage.getItem('username') + ':' + sessionStorage.getItem('password'));
-    const myHeader = new HttpHeaders().set('Authorization', psw);
-    return this.http.post(this.usersUrl + '/push-cash-to-atm', atm, {headers: myHeader}).subscribe(
+    return this.http.post(this.usersUrl + '/push-cash', atm).subscribe(
       res => {
         console.log(res);
       },
@@ -35,11 +31,8 @@ export class AtmService {
       });
   }
 
-  // TODO: Implement
   public withdrawMoney(withdrawMoneyRequest: WithdrawMoneyRequest) {
-    let psw = 'Basic ' + btoa(sessionStorage.getItem('username') + ':' + sessionStorage.getItem('password'));
-    const myHeader = new HttpHeaders().set('Authorization', psw);
-    return this.http.post(this.usersUrl + '/withdraw-money', withdrawMoneyRequest, {headers: myHeader}).subscribe(
+    return this.http.post(this.usersUrl + '/withdraw-money', withdrawMoneyRequest).subscribe(
       res => {
         console.log(res);
       },

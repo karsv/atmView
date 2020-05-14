@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {Atm} from '../model/atm';
+import {Atm} from '../../model/atm/atm';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AtmService} from '../service/atm/atm.service';
+import {AtmService} from '../../service/atm/atm.service';
 
 @Component({
   selector: 'app-atm-form',

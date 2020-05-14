@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AtmListComponent} from './atm-list/atm-list.component';
-import {AtmFormComponent} from './atm-form/atm-form.component';
-import {LoginComponent} from './login/login.component';
-import {LogoutComponent} from './logout/logout.component';
+import {AtmListComponent} from './components/atm-list/atm-list.component';
+import {AtmFormComponent} from './components/atm-form/atm-form.component';
+import {LoginComponent} from './components/login/login.component';
+import {LogoutComponent} from './components/logout/logout.component';
 import {AuthGuardService} from './service/authGuard/auth-guard.service';
-import {WithdrawComponent} from './withdraw/withdraw.component';
+import {WithdrawComponent} from './components/withdraw/withdraw.component';
 
 const routes: Routes = [
   {path: 'atms', component: AtmListComponent, canActivate: [AuthGuardService]},

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Atm} from '../model/atm';
-import {AtmService} from '../service/atm/atm.service';
+import {Atm} from '../../model/atm/atm';
+import {AtmService} from '../../service/atm/atm.service';
 
 @Component({
   selector: 'app-atm-list',

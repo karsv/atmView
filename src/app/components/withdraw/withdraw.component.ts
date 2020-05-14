@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {WithdrawMoneyRequest} from '../model/withdraw-money-request';
+import {WithdrawMoneyRequest} from '../../model/wihtdrawMoneyRequest/withdraw-money-request';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AtmService} from '../service/atm/atm.service';
+import {AtmService} from '../../service/atm/atm.service';
 
 @Component({
   selector: 'app-withdraw',
