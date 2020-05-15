@@ -1,4 +1,4 @@
-import { UserRequest } from './user-request';
+import {UserRequest} from './user-request';
 
 describe('UserRequest', () => {
   it('should create an instance', () => {

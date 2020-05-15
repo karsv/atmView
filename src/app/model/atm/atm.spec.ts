@@ -1,4 +1,4 @@
-import { Atm } from './atm';
+import {Atm} from './atm';
 
 describe('Atm', () => {
   it('should create an instance', () => {

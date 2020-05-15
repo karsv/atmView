@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AtmListComponent } from './atm-list.component';
+import {AtmListComponent} from './atm-list.component';
 
 describe('AtmListComponent', () => {
   let component: AtmListComponent;
@@ -8,9 +8,9 @@ describe('AtmListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AtmListComponent ]
+      declarations: [AtmListComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

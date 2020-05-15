@@ -1,4 +1,4 @@
-import { AccountResponse } from './account-response';
+import {AccountResponse} from './account-response';
 
 describe('AccountResponse', () => {
   it('should create an instance', () => {

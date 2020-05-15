@@ -1,8 +1,5 @@
-import {AtmRequest} from '../atmRequest/atm-request';
-import {AccountRequest} from '../accountRequest/account-request';
-
 export class WithdrawMoneyRequest {
-  atm: number;
+  atmId: number;
   money: number;
-  account: number;
+  accountId: number;
 }

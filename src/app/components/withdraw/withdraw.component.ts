@@ -10,6 +10,7 @@ import {AtmService} from '../../service/atm/atm.service';
 })
 export class WithdrawComponent implements OnInit {
   withdraw: WithdrawMoneyRequest;
+  error: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -21,7 +22,16 @@ export class WithdrawComponent implements OnInit {
   }
 
   onSubmit() {
-    this.atmService.withdrawMoney(this.withdraw);
+    this.atmService.withdrawMoney(this.withdraw).subscribe(
+      res => {
+        console.log(res);
+      },
+      error => {
+        this.error = error.error.text;
+      });
+    if (this.error) {
+      this.router.navigate(['/account']);
+    }
   }
 
 }

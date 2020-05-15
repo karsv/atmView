@@ -1,4 +1,4 @@
-import { DepositMoneyRequest } from './deposit-money-request';
+import {DepositMoneyRequest} from './deposit-money-request';
 
 describe('DepositMoneyRequest', () => {
   it('should create an instance', () => {

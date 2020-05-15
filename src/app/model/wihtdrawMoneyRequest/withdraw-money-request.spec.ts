@@ -1,4 +1,4 @@
-import { WithdrawMoneyRequest } from './withdraw-money-request';
+import {WithdrawMoneyRequest} from './withdraw-money-request';
 
 describe('WithdrawMoneyRequest', () => {
   it('should create an instance', () => {

@@ -1,9 +1,10 @@
 <div class="card my-5">
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="alert alert-danger" role="alert">{{ error }}</div>
       <div class="form-group">
         <label for="atm">Atm ID</label>
-        <input type="text" [(ngModel)]="withdraw.atm"
+        <input type="text" [(ngModel)]="withdraw.atmId"
                class="form-control"
                id="atm"
                name="atmid"
@@ -24,7 +25,7 @@
       </div>
       <div class="form-group">
         <label for="account">Account ID</label>
-        <input type="number" [(ngModel)]="withdraw.account"
+        <input type="number" [(ngModel)]="withdraw.accountId"
                value="0"
                min="0"
                class="form-control"
