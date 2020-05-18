@@ -26,8 +26,11 @@ export class WithdrawComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res);
+          this.router.navigate(['/account']);
+        },
+        errorRes => {
+          this.error = errorRes.error.message;
         }
       );
-    this.router.navigate(['/account']);
   }
 }

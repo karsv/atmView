@@ -10,6 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class DepositMoneyComponent implements OnInit {
   depositMoneyRequest: DepositMoneyRequest;
+  error: string;
 
   constructor(private atmService: AtmService,
               private route: ActivatedRoute,
@@ -25,8 +26,11 @@ export class DepositMoneyComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res);
+          this.router.navigate(['/account']);
+        },
+        errorRes => {
+          this.error = errorRes.error.message;
         }
       );
-    this.router.navigate(['/account']);
   }
 }

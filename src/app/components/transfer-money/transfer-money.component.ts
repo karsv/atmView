@@ -10,6 +10,7 @@ import {AtmService} from '../../service/atm/atm.service';
 })
 export class TransferMoneyComponent implements OnInit {
   transferMoney: TransferMoneyRequest;
+  error: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -22,11 +23,15 @@ export class TransferMoneyComponent implements OnInit {
   }
 
   onSubmit() {
-    this.atmService.transferMoney(this.transferMoney).subscribe(
-      res => {
-        console.log(res);
-      }
-    );
-    this.router.navigate(['/account']);
+    this.atmService.transferMoney(this.transferMoney)
+      .subscribe(
+        res => {
+          console.log(res);
+          this.router.navigate(['/account']);
+        },
+        errorRes => {
+          this.error = errorRes.error.message;
+        }
+      );
   }
 }
