@@ -17,6 +17,14 @@
                  class="btn btn-info">Withdraw money</a>
             </li>
             <li class="list-inline-item">
+              <a *ngIf="auth.isUserLoggedIn() && auth.userRole()=='USER'" routerLink="/deposit-money"
+                 class="btn btn-info">Deposit money</a>
+            </li>
+            <li class="list-inline-item">
+              <a *ngIf="auth.isUserLoggedIn() && auth.userRole()=='USER'" routerLink="/transfer-money"
+                 class="btn btn-info">Transfer money</a>
+            </li>
+            <li class="list-inline-item">
               <a *ngIf="!auth.isUserLoggedIn()" routerLink="/login" class="btn btn-info">Login</a>
             </li>
             <li class="list-inline-item">

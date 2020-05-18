@@ -11,7 +11,9 @@ import {LoginComponent} from './components/login/login.component';
 import {LogoutComponent} from './components/logout/logout.component';
 import {WithdrawComponent} from './components/withdraw/withdraw.component';
 import {AccountStatusComponent} from './components/account-status/account-status.component';
-import {BasicAuthHtppInterceptorServiceService} from './service/basicAuthHttpInterceptor/basic-auth-htpp-interceptor-service.service';
+import {BasicAuthHttpInterceptorService} from './service/basicAuthHttpInterceptor/basic-auth-http-interceptor.service';
+import {DepositMoneyComponent} from './components/deposit-money/deposit-money.component';
+import {TransferMoneyComponent} from './components/transfer-money/transfer-money.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {BasicAuthHtppInterceptorServiceService} from './service/basicAuthHttpInt
     LoginComponent,
     LogoutComponent,
     WithdrawComponent,
-    AccountStatusComponent
+    AccountStatusComponent,
+    DepositMoneyComponent,
+    TransferMoneyComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,7 @@ import {BasicAuthHtppInterceptorServiceService} from './service/basicAuthHttpInt
     FormsModule
   ],
   providers: [AtmService, {
-    provide: HTTP_INTERCEPTORS, useClass: BasicAuthHtppInterceptorServiceService, multi: true
+    provide: HTTP_INTERCEPTORS, useClass: BasicAuthHttpInterceptorService, multi: true
   }],
   bootstrap: [AppComponent]
 })

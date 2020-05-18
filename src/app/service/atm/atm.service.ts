@@ -3,6 +3,8 @@ import {Atm} from '../../model/atm/atm';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {WithdrawMoneyRequest} from '../../model/wihtdrawMoneyRequest/withdraw-money-request';
+import {DepositMoneyRequest} from '../../model/depositMoneyRequest/deposit-money-request';
+import {TransferMoneyRequest} from '../../model/transferMoneyRequest/transfer-money-request';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +35,15 @@ export class AtmService {
   public withdrawMoney(withdrawMoneyRequest: WithdrawMoneyRequest) {
     sessionStorage.setItem('accountId', withdrawMoneyRequest.accountId.toString());
     return this.http.post(this.usersUrl + '/withdraw-money', withdrawMoneyRequest);
+  }
+
+  public depositMoney(depositMoneyRequest: DepositMoneyRequest) {
+    sessionStorage.setItem('accountId', depositMoneyRequest.accountId.toString());
+    return this.http.post(this.usersUrl + '/deposit-money', depositMoneyRequest);
+  }
+
+  public transferMoney(transferMoneyRequest: TransferMoneyRequest) {
+    sessionStorage.setItem('accountId', transferMoneyRequest.ownerAccountId.toString());
+    return this.http.post(this.usersUrl + '/transfer-money', transferMoneyRequest);
   }
 }

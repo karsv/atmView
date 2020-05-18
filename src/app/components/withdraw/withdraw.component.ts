@@ -22,16 +22,12 @@ export class WithdrawComponent implements OnInit {
   }
 
   onSubmit() {
-    this.atmService.withdrawMoney(this.withdraw).subscribe(
-      res => {
-        console.log(res);
-      },
-      error => {
-        this.error = error.error.text;
-      });
-    if (this.error) {
-      this.router.navigate(['/account']);
-    }
+    this.atmService.withdrawMoney(this.withdraw)
+      .subscribe(
+        res => {
+          console.log(res);
+        }
+      );
+    this.router.navigate(['/account']);
   }
-
 }

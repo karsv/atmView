@@ -6,7 +6,7 @@ import {AccountResponse} from '../../model/accountResponse/account-response';
 @Injectable({
   providedIn: 'root'
 })
-export class AccountServiceService {
+export class AccountService {
 
   private usersUrl: string;
 

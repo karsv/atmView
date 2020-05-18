@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AccountResponse} from '../../model/accountResponse/account-response';
-import {AccountServiceService} from '../../service/account/account-service.service';
+import {AccountService} from '../../service/account/account.service';
 import {AccountRequest} from '../../model/accountRequest/account-request';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -12,7 +12,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class AccountStatusComponent implements OnInit {
   account: AccountResponse;
 
-  constructor(private accountService: AccountServiceService, private route: ActivatedRoute,
+  constructor(private accountService: AccountService, private route: ActivatedRoute,
               private router: Router) {
   }
 
