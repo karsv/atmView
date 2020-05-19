@@ -9,6 +9,7 @@ import {WithdrawComponent} from './components/withdraw/withdraw.component';
 import {AccountStatusComponent} from './components/account-status/account-status.component';
 import {DepositMoneyComponent} from './components/deposit-money/deposit-money.component';
 import {TransferMoneyComponent} from './components/transfer-money/transfer-money.component';
+import {RegisterComponent} from './components/register/register.component';
 
 const routes: Routes = [
   {path: 'atms', component: AtmListComponent, canActivate: [AuthGuardService]},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'transfer-money', component: TransferMoneyComponent, canActivate: [AuthGuardService]},
   {path: 'account', component: AccountStatusComponent, canActivate: [AuthGuardService]},
   {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {path: 'logout', component: LogoutComponent, canActivate: [AuthGuardService]},
 ];
 

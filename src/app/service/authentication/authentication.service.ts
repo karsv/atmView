@@ -23,6 +23,11 @@ export class AuthenticationService {
     );
   }
 
+  register(user: UserRequest) {
+    return this.httpClient.post('http://localhost:8081/register', user).subscribe(result => {
+    });
+  }
+
   isUserLoggedIn() {
     let user = sessionStorage.getItem('username');
     return !(user === null);

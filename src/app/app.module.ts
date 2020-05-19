@@ -14,6 +14,7 @@ import {AccountStatusComponent} from './components/account-status/account-status
 import {BasicAuthHttpInterceptorService} from './service/basicAuthHttpInterceptor/basic-auth-http-interceptor.service';
 import {DepositMoneyComponent} from './components/deposit-money/deposit-money.component';
 import {TransferMoneyComponent} from './components/transfer-money/transfer-money.component';
+import {RegisterComponent} from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {TransferMoneyComponent} from './components/transfer-money/transfer-money
     WithdrawComponent,
     AccountStatusComponent,
     DepositMoneyComponent,
-    TransferMoneyComponent
+    TransferMoneyComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

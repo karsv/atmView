@@ -28,6 +28,9 @@
               <a *ngIf="!auth.isUserLoggedIn()" routerLink="/login" class="btn btn-info">Login</a>
             </li>
             <li class="list-inline-item">
+              <a *ngIf="!auth.isUserLoggedIn()" routerLink="/register" class="btn btn-info">Register</a>
+            </li>
+            <li class="list-inline-item">
               <a *ngIf="auth.isUserLoggedIn()" routerLink="/logout" class="btn btn-info">LogOut</a>
             </li>
           </ul>
