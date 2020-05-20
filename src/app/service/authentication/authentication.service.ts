@@ -24,8 +24,7 @@ export class AuthenticationService {
   }
 
   register(user: UserRequest) {
-    return this.httpClient.post('http://localhost:8081/register', user).subscribe(result => {
-    });
+    return this.httpClient.post('http://localhost:8081/register', user);
   }
 
   isUserLoggedIn() {
