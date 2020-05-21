@@ -1,27 +1,35 @@
-# AtmView
+# Front-end part of ATM
+Back-end part (https://github.com/karsv/atm)
+Stack: Angular, HTMl, CSS, TypeScript, BootStrap;
+Starter page: http://localhost:4200/login.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
+Here implemented basic logic of ATM: 
+- refill ATM; _(ADMIN)_
+- transfer money from one account to another account; _(USER)_
+- put money on the account; _(USER)_
+- check status of all ATMs, where shows available money on each ATM; _(USER)_
+- withdraw money; _(USER)_
+- check account; _(USER)_
 
-## Development server
+In this project realised Basic authentication with two roles (ADMIN, USER). 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+When this project starts it initialised with next parameters:
+1. ADMIN
+login: admin
+password: 123
+2. USER
+login: user
+password: 123
+with two accounts:
+ - id=1 (amount of money = 100000.11) 
+ - id=2 (amount of money = 0)
+ 
+3.Two ATMs
+ - id=1
+   NOTE 100 = 10
+   NOTE 200 = 10
+   NOTE 500 = 10
+ - id=2
+   NOTE 100 = 123
+   NOTE 200 = 123
+   NOTE 500 = 123

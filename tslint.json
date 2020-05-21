@@ -1,6 +1,10 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "variable-name": [
+      true,
+      "allow-leading-underscore"
+    ],
     "align": {
       "options": [
         "parameters",
