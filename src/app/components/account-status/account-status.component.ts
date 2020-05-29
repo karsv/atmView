@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./account-status.component.css']
 })
 export class AccountStatusComponent implements OnInit {
-  account: AccountResponse;
+  accounts: AccountResponse[];
 
   constructor(private accountService: AccountService, private route: ActivatedRoute,
               private router: Router) {
@@ -17,9 +17,7 @@ export class AccountStatusComponent implements OnInit {
 
   ngOnInit(): void {
     this.accountService.getAccount().subscribe(result => {
-        this.account = new AccountResponse();
-        this.account.money = result.money;
-        this.account.cardNumber = result.cardNumber;
+        this.accounts = result;
       },
       err => {
         console.log(err.message);

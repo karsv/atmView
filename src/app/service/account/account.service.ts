@@ -17,7 +17,7 @@ export class AccountService {
 
   public getAccount() {
     this.account = new AccountRequest();
-    this.account.id = +sessionStorage.getItem('accountId');
-    return this.http.post<AccountResponse>(this.usersUrl + '/status', this.account);
+    this.account.id = +sessionStorage.getItem('personId');
+    return this.http.post<AccountResponse[]>(this.usersUrl + '/get-status-all-accounts', this.account);
   }
 }

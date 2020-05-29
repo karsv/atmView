@@ -8,8 +8,10 @@
       </tr>
       </thead>
       <tbody>
-      <td>{{ account.cardNumber }}</td>
-      <td>{{ account.money }}</td>
+      <tr *ngFor="let account of accounts">
+        <td>{{ account.cardNumber }}</td>
+        <td>{{ account.money }}</td>
+      </tr>
       </tbody>
     </table>
   </div>
