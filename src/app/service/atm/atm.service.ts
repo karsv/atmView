@@ -33,17 +33,14 @@ export class AtmService {
   }
 
   public withdrawMoney(withdrawMoneyRequest: WithdrawMoneyRequest) {
-    sessionStorage.setItem('accountId', withdrawMoneyRequest.accountId.toString());
     return this.http.post(this.usersUrl + '/withdraw-money', withdrawMoneyRequest);
   }
 
   public depositMoney(depositMoneyRequest: DepositMoneyRequest) {
-    sessionStorage.setItem('accountId', depositMoneyRequest.accountId.toString());
     return this.http.post(this.usersUrl + '/deposit-money', depositMoneyRequest);
   }
 
   public transferMoney(transferMoneyRequest: TransferMoneyRequest) {
-    sessionStorage.setItem('accountId', transferMoneyRequest.ownerAccountId.toString());
     return this.http.post(this.usersUrl + '/transfer-money', transferMoneyRequest);
   }
 }

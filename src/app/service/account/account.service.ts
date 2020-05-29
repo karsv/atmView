@@ -9,12 +9,15 @@ import {AccountResponse} from '../../model/accountResponse/account-response';
 export class AccountService {
 
   private usersUrl: string;
+  private account: AccountRequest;
 
   constructor(private http: HttpClient) {
     this.usersUrl = 'http://localhost:8081/account';
   }
 
-  public getAccount(account: AccountRequest) {
-    return this.http.post<AccountResponse>(this.usersUrl + '/account-status', account);
+  public getAccount() {
+    this.account = new AccountRequest();
+    this.account.id = +sessionStorage.getItem('accountId');
+    return this.http.post<AccountResponse>(this.usersUrl + '/status', this.account);
   }
 }
