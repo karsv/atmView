@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
           this.warn = 'Registration successful! You will immediately redirect to login!';
           setTimeout(() => {
             this.router.navigate(['/login']);
-          }, 32000);
+          }, 3000);
         },
         errorRes => {
           this.error = errorRes.error.message;
