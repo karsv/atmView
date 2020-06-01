@@ -1,6 +1,7 @@
 div.field {
-  padding-bottom:10px;
+  padding-bottom: 10px;
 }
+
 div.field label {
   display: block;
   float: left;
@@ -8,7 +9,7 @@ div.field label {
   height: 15px;
 }
 
-.xl-size{
+.xl-size {
   width: 210px;
   margin-right: 1000px;
 }
@@ -16,4 +17,8 @@ div.field label {
 form {
   width: 160px;
   margin: 0 auto;
+}
+
+.warningColor {
+  color: navy;
 }
